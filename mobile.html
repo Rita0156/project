@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile</title>
+    <style>
+        body{
+            background-color: rgb(235, 231, 231);
+        }
+        #nav{
+            margin: auto;
+            margin-bottom: 30px;
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #nav>img{
+            
+            height: 50px;
+        }#nav>div>img{
+            height: 30px;
+        }
+        #mobi{
+            width: 60%;
+            margin: auto;
+            display: grid;
+            text-align: center;
+            grid-template-columns: repeat(1,fr);
+            gap: 30px;
+        }
+        #mobi>div{
+            padding: 20px;
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+
+        }#mobi>div:hover{
+            border: 2px solid rgb(61, 98, 233);
+        }
+        #mobi>div>img{
+           grid-column-start: 1;
+           grid-column-end:2 ;
+           grid-row-start: 1;
+           grid-row-end:4 ; 
+        }#mobi>div>button{
+            background-color: rgb(52, 119, 226);
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm4KzNQZNpFCC8chDiBvnIxtiCMyh6Mm1-4w&usqp=CAU">
+        <a href="./home.html">Home</a>
+        
+    <div>
+        <input type="text" placeholder="search here" id="search">
+        <input type="submit" value="Enter">
+    </div>
+        <a href="">Login/Register</a>
+        <div>
+            <img src="https://cdn.icon-icons.com/icons2/1369/PNG/512/-shopping-cart_90604.png">
+            <a href="">Cart</a>
+        </div>
+    </div>
+    <div id="mobi">
+
+    </div>
+</body>
+<script>
+    let mobiles=[
+        {
+            "image":"https://teja9.kuikr.com/i6/20230117/Iphone-12-pro-max-128-gb-VB201705171774173-ak_LWBP756598082-1673962631.webp",
+            "name":"Iphone 12 pro max 128 gb",
+            "price":"₹ 57000"
+        },
+        {
+            "image":"https://teja8.kuikr.com/i5/20230117/iPhone-11-Pro-64GB-Black-VB201705171774173-ak_LWBP59605870-1673936766.webp",
+            "name":"IPhone 11 Pro 64GB Black",
+            "price":"₹ 35000"
+        },
+        {
+            "image":"https://teja8.kuikr.com/i5/20221209/iPhone-7-plus-black-color-128GB-arjent-sell-VB201705171774173-ak_LWBP1177376281-1670568635.webp",
+            "name":"IPhone 7Plus 64GB Black",
+            "price":"₹ 5500"
+        },
+        {
+            "image":"https://teja8.kuikr.com/i4/20230113/IPHONE-11-BRAND-NEW-BOX-PACK-128GB-WITH-1-YEAR-WARRANTY-ORIGINAL-CALL-ME-OR-WHATSAPP-7838038667-VB201705171774173-ak_LWBP44567022-1673609418.png",
+            "name":"IPhone 11 Brand new Box",
+            "price":"₹ 5000"
+        },
+        {
+            "image":"https://teja8.kuikr.com/i5/20230112/Oneplus-8T-12GB-Ram-256GB-Storage-VB201705171774173-ak_LWBP485553604-1673505458.jpeg",
+            "name":"3 camera phone",
+            "price":"₹ 4000"
+        },
+        {
+            "image":"https://teja8.kuikr.com/i6/20230112/original-Apple-iPad-Pro-6th-Gen-128GB--Wi-Fi---5G--Unlocked---129in---Space-Grey-VB201705171774173-ak_LWBP24717923-1673485142.png",
+            "name":"Original Apple iPad 6pro",
+            "price":"₹ 40000"
+        },
+        {
+            "image":"https://teja8.kuikr.com/i5/20230107/Samsung-A50s-6GB-128GB-VB201705171774173-ak_LWBP27869647-1673033925.png",
+            "name":"Sumsang A50s 6GB/128GB",
+            "price":"₹ 6500"
+        },
+    ];
+  let parents=document.getElementById("mobi")
+  function Displaymob(data){
+    data.forEach((element) => {
+        let cate=document.createElement("div")
+        let img=document.createElement("img")
+        img.src=element.image
+        let name=document.createElement("h2")
+        name.innerText=element.name
+        let price=document.createElement("h3")
+        price.innerText=element.price
+        let call=document.createElement("button")
+        call.innerText="Call"
+        cate.append(img,name,price,call)
+        parents.append(cate)
+    });
+  }
+  Displaymob(mobiles)
+</script>
+</html>
